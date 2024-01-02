@@ -9,4 +9,8 @@ interface UserDao {
     @Transaction
     @Query("SELECT * FROM UserEntity")
     suspend fun getUsersWithLibraries(): List<UserWithLibrary>
+
+    @Transaction
+    @Query("SELECT * FROM LibraryEntity")
+    suspend fun getLibrariesWithCollections(): List<LibraryWithCollections>
 }
